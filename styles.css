@@ -338,7 +338,7 @@ svg {
   height: 62px;
   overflow: hidden;
   border-radius: var(--radius);
-  background-image: url("assets/fashion-hero.png");
+  background-image: url("fashion-hero.png");
   background-repeat: no-repeat;
   background-size: 360px auto;
   background-color: #f0ede7;
@@ -476,7 +476,7 @@ svg {
   border-radius: var(--radius);
   background:
     linear-gradient(90deg, rgba(38, 10, 13, 0.88), rgba(38, 10, 13, 0.35)),
-    url("assets/fashion-hero.png") center / cover;
+    url("fashion-hero.png") center / cover;
   color: #fff;
   margin-bottom: 14px;
 }
