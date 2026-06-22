@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Конфісклад - MVP мобільного додатку</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="demo-stage" aria-label="Демо мобільного додатку Конфісклад">
+      <section class="phone" aria-label="Конфісклад mobile app">
+        <div class="speaker" aria-hidden="true"></div>
+
+        <header class="app-header">
+          <div class="header-copy">
+            <span class="greeting">Добрий день, Олено</span>
+            <h1 data-page-title>Каталог</h1>
+          </div>
+
+          <div class="header-actions">
+            <button class="cart-button" type="button" aria-label="Кошик" title="Кошик" data-screen-target="cart">
+              <svg aria-hidden="true"><use href="#icon-cart"></use></svg>
+              <span data-cart-badge>2</span>
+            </button>
+            <button class="user-button" type="button" aria-label="Профіль" title="Профіль" data-screen-target="profile">ОК</button>
+          </div>
+        </header>
+
+        <div class="app-body">
+          <section class="screen" data-screen="store" data-title="Магазин" aria-label="Магазин">
+            <div class="scroll-area">
+              <article class="store-hero">
+                <div>
+                  <span class="soft-label">Конфісклад</span>
+                  <h2>Одяг та взуття зі складу</h2>
+                  <p>Балетки, кросівки, джинси, костюми та сезонний одяг у простому мобільному каталозі.</p>
+                  <button class="primary-button" type="button" data-screen-target="catalog">До каталогу</button>
+                </div>
+              </article>
+
+              <div class="quick-grid" aria-label="Швидкі розділи">
+                <button type="button" data-screen-target="catalog">
+                  <span class="quick-icon">В</span>
+                  <strong>Взуття</strong>
+                  <small>розміри 30-41</small>
+                </button>
+                <button type="button" data-screen-target="catalog">
+                  <span class="quick-icon">Ш</span>
+                  <strong>Штани</strong>
+                  <small>джинси та базові</small>
+                </button>
+                <button type="button" data-screen-target="catalog">
+                  <span class="quick-icon">К</span>
+                  <strong>Куртки</strong>
+                  <small>сезонні позиції</small>
+                </button>
+                <button type="button" data-screen-target="catalog">
+                  <span class="quick-icon">C</span>
+                  <strong>Костюми</strong>
+                  <small>жіночі 42-50</small>
+                </button>
+              </div>
+
+              <div class="section-line">
+                <h2>Рекомендовано</h2>
+                <button type="button" data-screen-target="catalog">Усі</button>
+              </div>
+
+              <div class="mini-products">
+                <article class="mini-product">
+                  <span class="product-shot shot-ballet"></span>
+                  <div>
+                    <strong>Балетки Ж HOROSO</strong>
+                    <small>розміри 30-37</small>
+                  </div>
+                  <b>349 грн</b>
+                </article>
+                <article class="mini-product">
+                  <span class="product-shot shot-sneaker"></span>
+                  <div>
+                    <strong>Кросівки Ж Difeno</strong>
+                    <small>розміри 36-41</small>
+                  </div>
+                  <b>899 грн</b>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <section class="screen active" data-screen="catalog" data-title="Каталог" aria-label="Каталог">
+            <div class="scroll-area">
+              <label class="search-box">
+                <svg aria-hidden="true"><use href="#icon-search"></use></svg>
+                <input type="search" value="взуття / одяг" aria-label="Пошук товару" />
+              </label>
+
+              <div class="category-row" aria-label="Категорії">
+                <button class="active" type="button">Взуття</button>
+                <button type="button">Куртки</button>
+                <button type="button">Штани</button>
+                <button type="button">Костюми</button>
+                <button type="button">Боді</button>
+                <button type="button">Джинси</button>
+              </div>
+
+              <article class="catalog-card">
+                <span class="product-shot shot-ballet"></span>
+                <div>
+                  <span class="soft-label">Взуття</span>
+                  <h2>Балетки Ж HOROSO</h2>
+                  <p>Розміри: 30, 31, 32, 33, 34, 35, 36, 37. Легка позиція для щоденного продажу.</p>
+                  <div class="price-row">
+                    <b>349 грн</b>
+                    <button type="button" data-add-cart aria-label="Додати балетки HOROSO">+</button>
+                  </div>
+                </div>
+              </article>
+
+              <article class="catalog-card">
+                <span class="product-shot shot-sneaker"></span>
+                <div>
+                  <span class="soft-label">Взуття</span>
+                  <h2>Кросівки Ж Difeno</h2>
+                  <p>Розміри: 36, 37, 38, 39, 40, 41. Базова модель для швидкого замовлення.</p>
+                  <div class="price-row">
+                    <b>899 грн</b>
+                    <button type="button" data-add-cart aria-label="Додати кросівки Difeno">+</button>
+                  </div>
+                </div>
+              </article>
+
+              <article class="catalog-card">
+                <span class="product-shot shot-jeans"></span>
+                <div>
+                  <span class="soft-label">Штани</span>
+                  <h2>Джинс Ж LDM син.</h2>
+                  <p>Жіночі сині джинси для демо-каталогу. Розміри та залишки можна показувати в картці товару.</p>
+                  <div class="price-row">
+                    <b>499 грн</b>
+                    <button type="button" data-add-cart aria-label="Додати джинси LDM">+</button>
+                  </div>
+                </div>
+              </article>
+
+              <article class="catalog-card">
+                <span class="product-shot shot-suit"></span>
+                <div>
+                  <span class="soft-label">Костюми</span>
+                  <h2>Костюм Ж (вельвет) Classic Fashion</h2>
+                  <p>Розміри: 42-50. Вельветовий жіночий костюм у картці з ціною та швидким додаванням.</p>
+                  <div class="price-row">
+                    <b>1 199 грн</b>
+                    <button type="button" data-add-cart aria-label="Додати костюм Classic Fashion">+</button>
+                  </div>
+                </div>
+              </article>
+
+              <article class="catalog-card">
+                <span class="product-shot shot-body"></span>
+                <div>
+                  <span class="soft-label">Боді</span>
+                  <h2>Бодік Д</h2>
+                  <p>Дитячий бодік як базова позиція для розділу дитячого одягу.</p>
+                  <div class="price-row">
+                    <b>179 грн</b>
+                    <button type="button" data-add-cart aria-label="Додати бодік">+</button>
+                  </div>
+                </div>
+              </article>
+
+              <article class="catalog-card">
+                <span class="product-shot shot-jacket"></span>
+                <div>
+                  <span class="soft-label">Куртки</span>
+                  <h2>Куртка Ж демісезонна</h2>
+                  <p>Сезонна група для каталогу: фото, розмірний ряд і швидкий кошик.</p>
+                  <div class="price-row">
+                    <b>1 499 грн</b>
+                    <button type="button" data-add-cart aria-label="Додати куртку">+</button>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="screen" data-screen="orders" data-title="Замовлення" aria-label="Замовлення">
+            <div class="scroll-area">
+              <div class="section-line top-line">
+                <h2>Мої замовлення</h2>
+                <button class="pill-button" type="button" data-screen-target="cart">
+                  <svg aria-hidden="true"><use href="#icon-cart"></use></svg>
+                  Кошик
+                </button>
+              </div>
+
+              <article class="order-card featured">
+                <div class="order-top">
+                  <span class="status-pill teal">Готується</span>
+                  <span>№ KF-1042</span>
+                </div>
+
+                <h2>Замовлення на 1 027 грн</h2>
+                <p>Балетки HOROSO, джинс LDM та бодік Д.</p>
+
+                <div class="thumb-row" aria-label="Товари в замовленні">
+                  <span class="product-shot shot-ballet"></span>
+                  <span class="product-shot shot-jeans"></span>
+                  <span class="product-shot shot-body"></span>
+                </div>
+
+                <ol class="timeline">
+                  <li class="done">
+                    <strong>Створено</strong>
+                    <span>Сьогодні, 10:14</span>
+                  </li>
+                  <li class="current">
+                    <strong>Комплектується</strong>
+                    <span>Менеджер перевіряє наявність</span>
+                  </li>
+                  <li>
+                    <strong>Готово до видачі</strong>
+                    <span>Очікує підтвердження</span>
+                  </li>
+                </ol>
+              </article>
+
+              <article class="order-card compact">
+                <div>
+                  <span class="status-pill amber">Новий кошик</span>
+                  <h3>Покупка на 528 грн</h3>
+                  <p>Балетки HOROSO, бодік Д</p>
+                </div>
+                <strong>528 грн</strong>
+              </article>
+
+              <article class="order-card compact">
+                <div>
+                  <span class="status-pill green">Завершено</span>
+                  <h3>Замовлення #KF-1019</h3>
+                  <p>Кросівки Difeno, костюм Classic Fashion</p>
+                </div>
+                <strong>2 098 грн</strong>
+              </article>
+            </div>
+          </section>
+
+          <section class="screen" data-screen="chat" data-title="Чат" aria-label="Чат">
+            <div class="scroll-area">
+              <article class="chat-card">
+                <span class="support-avatar">К</span>
+                <h2>Підтримка Конфісклад</h2>
+                <p>Швидкий канал для уточнення розміру, наявності, самовивозу або заміни позиції в замовленні.</p>
+                <button class="primary-button" type="button" data-demo-toast="Менеджер підключиться до чату">Написати менеджеру</button>
+              </article>
+
+              <div class="message-list">
+                <div class="message incoming">Ваше замовлення KF-1042 по балетках HOROSO вже комплектується.</div>
+                <div class="message outgoing">Чи є 37 розмір і можна забрати сьогодні після 18:00?</div>
+                <div class="message incoming">Так, менеджер підтвердить розмір і готовність у цьому чаті.</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="screen" data-screen="profile" data-title="Профіль" aria-label="Профіль">
+            <div class="scroll-area">
+              <article class="profile-card">
+                <span class="profile-avatar">ОК</span>
+                <h2>Олена К.</h2>
+                <p>Роздрібний клієнт</p>
+                <div class="profile-stats">
+                  <span><b>120</b><small>бонусів</small></span>
+                  <span><b>8</b><small>замовлень</small></span>
+                  <span><b>2026</b><small>клієнт з</small></span>
+                </div>
+              </article>
+
+              <nav class="profile-menu" aria-label="Меню профілю">
+                <button type="button">
+                  <svg aria-hidden="true"><use href="#icon-receipt"></use></svg>
+                  <span>Історія замовлень</span>
+                  <svg aria-hidden="true"><use href="#icon-chevron"></use></svg>
+                </button>
+                <button type="button">
+                  <svg aria-hidden="true"><use href="#icon-location"></use></svg>
+                  <span>Адреса та самовивіз</span>
+                  <svg aria-hidden="true"><use href="#icon-chevron"></use></svg>
+                </button>
+                <button type="button">
+                  <svg aria-hidden="true"><use href="#icon-user"></use></svg>
+                  <span>Контакти клієнта</span>
+                  <svg aria-hidden="true"><use href="#icon-chevron"></use></svg>
+                </button>
+              </nav>
+            </div>
+          </section>
+
+          <section class="screen" data-screen="cart" data-title="Кошик" aria-label="Кошик">
+            <div class="scroll-area cart-area">
+              <article class="cart-item">
+                <span class="product-shot shot-ballet"></span>
+                <div>
+                  <h2>Балетки Ж HOROSO</h2>
+                  <p>1 пара, розмір 37</p>
+                </div>
+                <strong>349 грн</strong>
+              </article>
+
+              <article class="cart-item">
+                <span class="product-shot shot-body"></span>
+                <div>
+                  <h2>Бодік Д</h2>
+                  <p>1 шт</p>
+                </div>
+                <strong>179 грн</strong>
+              </article>
+
+              <article class="checkout-card">
+                <h2>Оформлення</h2>
+                <label>
+                  <span>Спосіб отримання</span>
+                  <select aria-label="Спосіб отримання">
+                    <option>Самовивіз із магазину</option>
+                    <option>Доставка по місту</option>
+                  </select>
+                </label>
+                <label>
+                  <span>Телефон</span>
+                  <input type="tel" value="+380 67 000 00 00" />
+                </label>
+              </article>
+            </div>
+
+            <div class="checkout-bar">
+              <div>
+                <span>Разом</span>
+                <strong>528 грн</strong>
+              </div>
+              <button class="primary-button" type="button" data-confirm-order>Оформити</button>
+            </div>
+          </section>
+        </div>
+
+        <nav class="bottom-nav" aria-label="Головна навігація">
+          <button type="button" data-screen-target="store">
+            <svg aria-hidden="true"><use href="#icon-shop"></use></svg>
+            <span>Магазин</span>
+          </button>
+          <button class="active" type="button" data-screen-target="catalog">
+            <svg aria-hidden="true"><use href="#icon-list"></use></svg>
+            <span>Каталог</span>
+          </button>
+          <button type="button" data-screen-target="orders">
+            <svg aria-hidden="true"><use href="#icon-receipt"></use></svg>
+            <span>Замовлення</span>
+          </button>
+          <button type="button" data-screen-target="chat">
+            <svg aria-hidden="true"><use href="#icon-chat"></use></svg>
+            <span>Чат</span>
+          </button>
+          <button type="button" data-screen-target="profile">
+            <svg aria-hidden="true"><use href="#icon-user"></use></svg>
+            <span>Профіль</span>
+          </button>
+        </nav>
+      </section>
+    </main>
+
+    <div class="toast" role="status" aria-live="polite" data-toast></div>
+
+    <svg class="icon-sprite" aria-hidden="true">
+      <symbol id="icon-cart" viewBox="0 0 24 24">
+        <path d="M6 6h15l-1.5 8.4a2 2 0 0 1-2 1.6H8.4a2 2 0 0 1-2-1.7L5 3H2" />
+        <circle cx="9" cy="20" r="1.2" />
+        <circle cx="18" cy="20" r="1.2" />
+      </symbol>
+      <symbol id="icon-search" viewBox="0 0 24 24">
+        <path d="m20 20-4.2-4.2M18 10.5a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z" />
+      </symbol>
+      <symbol id="icon-shop" viewBox="0 0 24 24">
+        <path d="M4 10h16l-1-5H5l-1 5Zm1 0v10h14V10M9 20v-6h6v6" />
+      </symbol>
+      <symbol id="icon-list" viewBox="0 0 24 24">
+        <path d="M8 6h12M8 12h12M8 18h12M4 6h0M4 12h0M4 18h0" />
+      </symbol>
+      <symbol id="icon-receipt" viewBox="0 0 24 24">
+        <path d="M7 3h10v18l-2-1.2-2 1.2-2-1.2-2 1.2-2-1.2V3Zm3 5h4m-4 4h4m-4 4h3" />
+      </symbol>
+      <symbol id="icon-chat" viewBox="0 0 24 24">
+        <path d="M5 5h14v10H9l-4 4V5Z" />
+      </symbol>
+      <symbol id="icon-user" viewBox="0 0 24 24">
+        <circle cx="12" cy="8" r="4" />
+        <path d="M4 21a8 8 0 0 1 16 0" />
+      </symbol>
+      <symbol id="icon-location" viewBox="0 0 24 24">
+        <path d="M19 10c0 5-7 11-7 11s-7-6-7-11a7 7 0 0 1 14 0Z" />
+        <circle cx="12" cy="10" r="2.2" />
+      </symbol>
+      <symbol id="icon-chevron" viewBox="0 0 24 24">
+        <path d="m9 18 6-6-6-6" />
+      </symbol>
+    </svg>
+
+    <script src="app.js"></script>
+  </body>
+</html>
